@@ -6,9 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>CSS3 Colors</title>
-    <meta name="description" content="Representation of all standard CSS3 colors with their names, RGB and HEX values">
-    <meta name="keywords" content="color,css3,css">
+    <meta name="description" content="Representation of all standard CSS3 colors with their names, RGB, HSL and HEX values">
+    <meta name="keywords" content="color,css3,css,rgb,hsl,hex">
     <meta name="author" content="Dmitry Yakovlev">
+    <link rel="icon" type="image/png" href="/demo/css3-colors/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/demo/css3-colors/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/demo/css3-colors/favicon-64x64.png" sizes="64x64">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700" rel="stylesheet"> 
     <style>
         * {
             margin: 0;
@@ -17,7 +21,7 @@
         }
 
         body {
-            font-family: monospace;
+            font-family: 'Ubuntu Mono', monospace;
             color: #000;
             font-size: 14px;
         }
@@ -85,9 +89,17 @@
             font-size: 1rem;
         }
 
+        ul {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            list-style-type: none;
+        }
+
         ul li {
-            display: inline-block;
-            padding: 0 1rem;
+            /* display: inline-block; */
+            padding: .25rem .5rem;
             text-transform: lowercase;
         }
     </style>
@@ -99,1032 +111,1179 @@
         <input type="button" value="Randomize">
     </header>
     <main>
-        <section data-order="1" style="background: #F0F8FF; order: 1;">
+        <section data-order="1" style="background: aliceblue; order: 1" data-luma="light">
             <h2>aliceblue</h2>
             <ul>
                 <li>rgb(240,248,255)</li>
+                <li>hsl(208,100%,97%)</li>
                 <li>#F0F8FF</li>
             </ul>
         </section>
-        <section data-order="2" style="background: #FAEBD7; order: 2;">
+        <section data-order="2" style="background: antiquewhite; order: 2" data-luma="light">
             <h2>antiquewhite</h2>
             <ul>
                 <li>rgb(250,235,215)</li>
+                <li>hsl(34,78%,91%)</li>
                 <li>#FAEBD7</li>
             </ul>
         </section>
-        <section data-order="3" style="background: #00FFFF; order: 3;">
+        <section data-order="3" style="background: aqua; order: 3" data-luma="light">
             <h2>aqua</h2>
             <ul>
                 <li>rgb(0,255,255)</li>
+                <li>hsl(180,100%,50%)</li>
                 <li>#00FFFF</li>
             </ul>
         </section>
-        <section data-order="4" style="background: #7FFFD4; order: 4;">
+        <section data-order="4" style="background: aquamarine; order: 4" data-luma="light">
             <h2>aquamarine</h2>
             <ul>
                 <li>rgb(127,255,212)</li>
+                <li>hsl(160,100%,75%)</li>
                 <li>#7FFFD4</li>
             </ul>
         </section>
-        <section data-order="5" style="background: #F0FFFF; order: 5;">
+        <section data-order="5" style="background: azure; order: 5" data-luma="light">
             <h2>azure</h2>
             <ul>
                 <li>rgb(240,255,255)</li>
+                <li>hsl(180,100%,97%)</li>
                 <li>#F0FFFF</li>
             </ul>
         </section>
-        <section data-order="6" style="background: #F5F5DC; order: 6;">
+        <section data-order="6" style="background: beige; order: 6" data-luma="light">
             <h2>beige</h2>
             <ul>
                 <li>rgb(245,245,220)</li>
+                <li>hsl(60,56%,91%)</li>
                 <li>#F5F5DC</li>
             </ul>
         </section>
-        <section data-order="7" style="background: #FFE4C4; order: 7;">
+        <section data-order="7" style="background: bisque; order: 7" data-luma="light">
             <h2>bisque</h2>
             <ul>
                 <li>rgb(255,228,196)</li>
+                <li>hsl(33,100%,88%)</li>
                 <li>#FFE4C4</li>
             </ul>
         </section>
-        <section data-order="8" style="background: #000000; order: 8;" data-luma="dark">
+        <section data-order="8" style="background: black; order: 8" data-luma="dark">
             <h2>black</h2>
             <ul>
                 <li>rgb(0,0,0)</li>
+                <li>hsl(0,0%,0%)</li>
                 <li>#000000</li>
             </ul>
         </section>
-        <section data-order="9" style="background: #FFEBCD; order: 9;">
+        <section data-order="9" style="background: blanchedalmond; order: 9" data-luma="light">
             <h2>blanchedalmond</h2>
             <ul>
                 <li>rgb(255,235,205)</li>
+                <li>hsl(36,100%,90%)</li>
                 <li>#FFEBCD</li>
             </ul>
         </section>
-        <section data-order="10" style="background: #0000FF; order: 10;" data-luma="dark">
+        <section data-order="10" style="background: blue; order: 10" data-luma="light">
             <h2>blue</h2>
             <ul>
                 <li>rgb(0,0,255)</li>
+                <li>hsl(240,100%,50%)</li>
                 <li>#0000FF</li>
             </ul>
         </section>
-        <section data-order="11" style="background: #8A2BE2; order: 11;" data-luma="dark">
+        <section data-order="11" style="background: blueviolet; order: 11" data-luma="dark">
             <h2>blueviolet</h2>
             <ul>
                 <li>rgb(138,43,226)</li>
+                <li>hsl(271,76%,53%)</li>
                 <li>#8A2BE2</li>
             </ul>
         </section>
-        <section data-order="12" style="background: #A52A2A; order: 12;" data-luma="dark">
+        <section data-order="12" style="background: brown; order: 12" data-luma="dark">
             <h2>brown</h2>
             <ul>
                 <li>rgb(165,42,42)</li>
+                <li>hsl(0,59%,41%)</li>
                 <li>#A52A2A</li>
             </ul>
         </section>
-        <section data-order="13" style="background: #DEB887; order: 13;">
+        <section data-order="13" style="background: burlywood; order: 13" data-luma="light">
             <h2>burlywood</h2>
             <ul>
                 <li>rgb(222,184,135)</li>
+                <li>hsl(34,57%,70%)</li>
                 <li>#DEB887</li>
             </ul>
         </section>
-        <section data-order="14" style="background: #5F9EA0; order: 14;">
+        <section data-order="14" style="background: cadetblue; order: 14" data-luma="light">
             <h2>cadetblue</h2>
             <ul>
                 <li>rgb(95,158,160)</li>
+                <li>hsl(182,25%,50%)</li>
                 <li>#5F9EA0</li>
             </ul>
         </section>
-        <section data-order="15" style="background: #7FFF00; order: 15;">
+        <section data-order="15" style="background: chartreuse; order: 15" data-luma="light">
             <h2>chartreuse</h2>
             <ul>
                 <li>rgb(127,255,0)</li>
+                <li>hsl(90,100%,50%)</li>
                 <li>#7FFF00</li>
             </ul>
         </section>
-        <section data-order="16" style="background: #D2691E; order: 16;" data-luma="dark">
+        <section data-order="16" style="background: chocolate; order: 16" data-luma="dark">
             <h2>chocolate</h2>
             <ul>
                 <li>rgb(210,105,30)</li>
+                <li>hsl(25,75%,47%)</li>
                 <li>#D2691E</li>
             </ul>
         </section>
-        <section data-order="17" style="background: #FF7F50; order: 17;">
+        <section data-order="17" style="background: coral; order: 17" data-luma="light">
             <h2>coral</h2>
             <ul>
                 <li>rgb(255,127,80)</li>
+                <li>hsl(16,100%,66%)</li>
                 <li>#FF7F50</li>
             </ul>
         </section>
-        <section data-order="18" style="background: #6495ED; order: 18;">
+        <section data-order="18" style="background: cornflowerblue; order: 18" data-luma="light">
             <h2>cornflowerblue</h2>
             <ul>
                 <li>rgb(100,149,237)</li>
+                <li>hsl(219,79%,66%)</li>
                 <li>#6495ED</li>
             </ul>
         </section>
-        <section data-order="19" style="background: #FFF8DC; order: 19;">
+        <section data-order="19" style="background: cornsilk; order: 19" data-luma="light">
             <h2>cornsilk</h2>
             <ul>
                 <li>rgb(255,248,220)</li>
+                <li>hsl(48,100%,93%)</li>
                 <li>#FFF8DC</li>
             </ul>
         </section>
-        <section data-order="20" style="background: #DC143C; order: 20;" data-luma="dark">
+        <section data-order="20" style="background: crimson; order: 20" data-luma="dark">
             <h2>crimson</h2>
             <ul>
                 <li>rgb(220,20,60)</li>
+                <li>hsl(348,83%,58%)</li>
                 <li>#DC143C</li>
             </ul>
         </section>
-        <section data-order="21" style="background: #00FFFF; order: 21;">
+        <section data-order="21" style="background: cyan; order: 21" data-luma="light">
             <h2>cyan</h2>
             <ul>
                 <li>rgb(0,255,255)</li>
+                <li>hsl(180,100%,50%)</li>
                 <li>#00FFFF</li>
             </ul>
         </section>
-        <section data-order="22" style="background: #00008B; order: 22;" data-luma="dark">
+        <section data-order="22" style="background: darkblue; order: 22" data-luma="dark">
             <h2>darkblue</h2>
             <ul>
                 <li>rgb(0,0,139)</li>
+                <li>hsl(240,100%,27%)</li>
                 <li>#00008B</li>
             </ul>
         </section>
-        <section data-order="23" style="background: #008B8B; order: 23;" data-luma="dark">
+        <section data-order="23" style="background: darkcyan; order: 23" data-luma="dark">
             <h2>darkcyan</h2>
             <ul>
                 <li>rgb(0,139,139)</li>
+                <li>hsl(180,100%,27%)</li>
                 <li>#008B8B</li>
             </ul>
         </section>
-        <section data-order="24" style="background: #B8860B; order: 24;">
+        <section data-order="24" style="background: darkgoldenrod; order: 24" data-luma="light">
             <h2>darkgoldenrod</h2>
             <ul>
                 <li>rgb(184,134,11)</li>
+                <li>hsl(43,89%,38%)</li>
                 <li>#B8860B</li>
             </ul>
         </section>
-        <section data-order="25" style="background: #A9A9A9; order: 25;">
+        <section data-order="25" style="background: darkgray; order: 25" data-luma="light">
             <h2>darkgray</h2>
             <ul>
                 <li>rgb(169,169,169)</li>
+                <li>hsl(0,0%,66%)</li>
                 <li>#A9A9A9</li>
             </ul>
         </section>
-        <section data-order="26" style="background: #006400; order: 26;" data-luma="dark">
+        <section data-order="26" style="background: darkgreen; order: 26" data-luma="dark">
             <h2>darkgreen</h2>
             <ul>
                 <li>rgb(0,100,0)</li>
+                <li>hsl(120,100%,20%)</li>
                 <li>#006400</li>
             </ul>
         </section>
-        <section data-order="27" style="background: #A9A9A9; order: 27;">
+        <section data-order="27" style="background: darkgrey; order: 27" data-luma="light">
             <h2>darkgrey</h2>
             <ul>
                 <li>rgb(169,169,169)</li>
+                <li>hsl(0,0%,66%)</li>
                 <li>#A9A9A9</li>
             </ul>
         </section>
-        <section data-order="28" style="background: #BDB76B; order: 28;">
+        <section data-order="28" style="background: darkkhaki; order: 28" data-luma="light">
             <h2>darkkhaki</h2>
             <ul>
                 <li>rgb(189,183,107)</li>
+                <li>hsl(56,38%,58%)</li>
                 <li>#BDB76B</li>
             </ul>
         </section>
-        <section data-order="29" style="background: #8B008B; order: 29;" data-luma="dark">
+        <section data-order="29" style="background: darkmagenta; order: 29" data-luma="dark">
             <h2>darkmagenta</h2>
             <ul>
                 <li>rgb(139,0,139)</li>
+                <li>hsl(300,100%,27%)</li>
                 <li>#8B008B</li>
             </ul>
         </section>
-        <section data-order="30" style="background: #556B2F; order: 30;" data-luma="dark">
+        <section data-order="30" style="background: darkolivegreen; order: 30" data-luma="dark">
             <h2>darkolivegreen</h2>
             <ul>
                 <li>rgb(85,107,47)</li>
+                <li>hsl(82,39%,30%)</li>
                 <li>#556B2F</li>
             </ul>
         </section>
-        <section data-order="31" style="background: #FF8C00; order: 31;">
+        <section data-order="31" style="background: darkorange; order: 31" data-luma="light">
             <h2>darkorange</h2>
             <ul>
                 <li>rgb(255,140,0)</li>
+                <li>hsl(33,100%,50%)</li>
                 <li>#FF8C00</li>
             </ul>
         </section>
-        <section data-order="32" style="background: #9932CC; order: 32;" data-luma="dark">
+        <section data-order="32" style="background: darkorchid; order: 32" data-luma="dark">
             <h2>darkorchid</h2>
             <ul>
                 <li>rgb(153,50,204)</li>
+                <li>hsl(280,61%,50%)</li>
                 <li>#9932CC</li>
             </ul>
         </section>
-        <section data-order="33" style="background: #8B0000; order: 33;" data-luma="dark">
+        <section data-order="33" style="background: darkred; order: 33" data-luma="dark">
             <h2>darkred</h2>
             <ul>
                 <li>rgb(139,0,0)</li>
+                <li>hsl(0,100%,27%)</li>
                 <li>#8B0000</li>
             </ul>
         </section>
-        <section data-order="34" style="background: #E9967A; order: 34;">
+        <section data-order="34" style="background: darksalmon; order: 34" data-luma="light">
             <h2>darksalmon</h2>
             <ul>
                 <li>rgb(233,150,122)</li>
+                <li>hsl(15,72%,70%)</li>
                 <li>#E9967A</li>
             </ul>
         </section>
-        <section data-order="35" style="background: #8FBC8F; order: 35;">
+        <section data-order="35" style="background: darkseagreen; order: 35" data-luma="light">
             <h2>darkseagreen</h2>
             <ul>
                 <li>rgb(143,188,143)</li>
+                <li>hsl(120,25%,65%)</li>
                 <li>#8FBC8F</li>
             </ul>
         </section>
-        <section data-order="36" style="background: #483D8B; order: 36;" data-luma="dark">
+        <section data-order="36" style="background: darkslateblue; order: 36" data-luma="dark">
             <h2>darkslateblue</h2>
             <ul>
                 <li>rgb(72,61,139)</li>
+                <li>hsl(248,39%,39%)</li>
                 <li>#483D8B</li>
             </ul>
         </section>
-        <section data-order="37" style="background: #2F4F4F; order: 37;" data-luma="dark">
+        <section data-order="37" style="background: darkslategray; order: 37" data-luma="dark">
             <h2>darkslategray</h2>
             <ul>
                 <li>rgb(47,79,79)</li>
+                <li>hsl(180,25%,25%)</li>
                 <li>#2F4F4F</li>
             </ul>
         </section>
-        <section data-order="38" style="background: #2F4F4F; order: 38;" data-luma="dark">
+        <section data-order="38" style="background: darkslategrey; order: 38" data-luma="dark">
             <h2>darkslategrey</h2>
             <ul>
                 <li>rgb(47,79,79)</li>
+                <li>hsl(180,25%,25%)</li>
                 <li>#2F4F4F</li>
             </ul>
         </section>
-        <section data-order="39" style="background: #00CED1; order: 39;">
+        <section data-order="39" style="background: darkturquoise; order: 39" data-luma="light">
             <h2>darkturquoise</h2>
             <ul>
                 <li>rgb(0,206,209)</li>
+                <li>hsl(181,100%,41%)</li>
                 <li>#00CED1</li>
             </ul>
         </section>
-        <section data-order="40" style="background: #9400D3; order: 40;" data-luma="dark">
+        <section data-order="40" style="background: darkviolet; order: 40" data-luma="dark">
             <h2>darkviolet</h2>
             <ul>
                 <li>rgb(148,0,211)</li>
+                <li>hsl(282,100%,41%)</li>
                 <li>#9400D3</li>
             </ul>
         </section>
-        <section data-order="41" style="background: #FF1493; order: 41;" data-luma="dark">
+        <section data-order="41" style="background: deeppink; order: 41" data-luma="dark">
             <h2>deeppink</h2>
             <ul>
                 <li>rgb(255,20,147)</li>
+                <li>hsl(328,100%,54%)</li>
                 <li>#FF1493</li>
             </ul>
         </section>
-        <section data-order="42" style="background: #00BFFF; order: 42;">
+        <section data-order="42" style="background: deepskyblue; order: 42" data-luma="light">
             <h2>deepskyblue</h2>
             <ul>
                 <li>rgb(0,191,255)</li>
+                <li>hsl(195,100%,50%)</li>
                 <li>#00BFFF</li>
             </ul>
         </section>
-        <section data-order="43" style="background: #696969; order: 43;" data-luma="dark">
+        <section data-order="43" style="background: dimgray; order: 43" data-luma="dark">
             <h2>dimgray</h2>
             <ul>
                 <li>rgb(105,105,105)</li>
+                <li>hsl(0,0%,41%)</li>
                 <li>#696969</li>
             </ul>
         </section>
-        <section data-order="44" style="background: #696969; order: 44;" data-luma="dark">
+        <section data-order="44" style="background: dimgrey; order: 44" data-luma="dark">
             <h2>dimgrey</h2>
             <ul>
                 <li>rgb(105,105,105)</li>
+                <li>hsl(0,0%,41%)</li>
                 <li>#696969</li>
             </ul>
         </section>
-        <section data-order="45" style="background: #1E90FF; order: 45;" data-luma="dark">
+        <section data-order="45" style="background: dodgerblue; order: 45" data-luma="dark">
             <h2>dodgerblue</h2>
             <ul>
                 <li>rgb(30,144,255)</li>
+                <li>hsl(210,100%,56%)</li>
                 <li>#1E90FF</li>
             </ul>
         </section>
-        <section data-order="46" style="background: #B22222; order: 46;" data-luma="dark">
+        <section data-order="46" style="background: firebrick; order: 46" data-luma="dark">
             <h2>firebrick</h2>
             <ul>
                 <li>rgb(178,34,34)</li>
+                <li>hsl(0,68%,42%)</li>
                 <li>#B22222</li>
             </ul>
         </section>
-        <section data-order="47" style="background: #FFFAF0; order: 47;">
+        <section data-order="47" style="background: floralwhite; order: 47" data-luma="light">
             <h2>floralwhite</h2>
             <ul>
                 <li>rgb(255,250,240)</li>
+                <li>hsl(40,100%,97%)</li>
                 <li>#FFFAF0</li>
             </ul>
         </section>
-        <section data-order="48" style="background: #228B22; order: 48;" data-luma="dark">
+        <section data-order="48" style="background: forestgreen; order: 48" data-luma="dark">
             <h2>forestgreen</h2>
             <ul>
                 <li>rgb(34,139,34)</li>
+                <li>hsl(120,61%,34%)</li>
                 <li>#228B22</li>
             </ul>
         </section>
-        <section data-order="49" style="background: #FF00FF; order: 49;" data-luma="dark">
+        <section data-order="49" style="background: fuchsia; order: 49" data-luma="dark">
             <h2>fuchsia</h2>
             <ul>
                 <li>rgb(255,0,255)</li>
+                <li>hsl(300,100%,50%)</li>
                 <li>#FF00FF</li>
             </ul>
         </section>
-        <section data-order="50" style="background: #DCDCDC; order: 50;">
+        <section data-order="50" style="background: gainsboro; order: 50" data-luma="light">
             <h2>gainsboro</h2>
             <ul>
                 <li>rgb(220,220,220)</li>
+                <li>hsl(0,0%,86%)</li>
                 <li>#DCDCDC</li>
             </ul>
         </section>
-        <section data-order="51" style="background: #F8F8FF; order: 51;">
+        <section data-order="51" style="background: ghostwhite; order: 51" data-luma="light">
             <h2>ghostwhite</h2>
             <ul>
                 <li>rgb(248,248,255)</li>
+                <li>hsl(240,100%,99%)</li>
                 <li>#F8F8FF</li>
             </ul>
         </section>
-        <section data-order="52" style="background: #FFD700; order: 52;">
+        <section data-order="52" style="background: gold; order: 52" data-luma="light">
             <h2>gold</h2>
             <ul>
                 <li>rgb(255,215,0)</li>
+                <li>hsl(51,100%,50%)</li>
                 <li>#FFD700</li>
             </ul>
         </section>
-        <section data-order="53" style="background: #DAA520; order: 53;">
+        <section data-order="53" style="background: goldenrod; order: 53" data-luma="light">
             <h2>goldenrod</h2>
             <ul>
                 <li>rgb(218,165,32)</li>
+                <li>hsl(43,74%,49%)</li>
                 <li>#DAA520</li>
             </ul>
         </section>
-        <section data-order="54" style="background: #808080; order: 54;" data-luma="dark">
+        <section data-order="54" style="background: gray; order: 54" data-luma="dark">
             <h2>gray</h2>
             <ul>
                 <li>rgb(128,128,128)</li>
+                <li>hsl(0,0%,50%)</li>
                 <li>#808080</li>
             </ul>
         </section>
-        <section data-order="55" style="background: #008000; order: 55;" data-luma="dark">
+        <section data-order="55" style="background: green; order: 55" data-luma="dark">
             <h2>green</h2>
             <ul>
                 <li>rgb(0,128,0)</li>
+                <li>hsl(120,100%,25%)</li>
                 <li>#008000</li>
             </ul>
         </section>
-        <section data-order="56" style="background: #ADFF2F; order: 56;">
+        <section data-order="56" style="background: greenyellow; order: 56" data-luma="light">
             <h2>greenyellow</h2>
             <ul>
                 <li>rgb(173,255,47)</li>
+                <li>hsl(84,100%,59%)</li>
                 <li>#ADFF2F</li>
             </ul>
         </section>
-        <section data-order="57" style="background: #808080; order: 57;" data-luma="dark">
+        <section data-order="57" style="background: grey; order: 57" data-luma="dark">
             <h2>grey</h2>
             <ul>
                 <li>rgb(128,128,128)</li>
+                <li>hsl(0,0%,50%)</li>
                 <li>#808080</li>
             </ul>
         </section>
-        <section data-order="58" style="background: #F0FFF0; order: 58;">
+        <section data-order="58" style="background: honeydew; order: 58" data-luma="light">
             <h2>honeydew</h2>
             <ul>
                 <li>rgb(240,255,240)</li>
+                <li>hsl(120,100%,97%)</li>
                 <li>#F0FFF0</li>
             </ul>
         </section>
-        <section data-order="59" style="background: #FF69B4; order: 59;">
+        <section data-order="59" style="background: hotpink; order: 59" data-luma="light">
             <h2>hotpink</h2>
             <ul>
                 <li>rgb(255,105,180)</li>
+                <li>hsl(330,100%,71%)</li>
                 <li>#FF69B4</li>
             </ul>
         </section>
-        <section data-order="60" style="background: #CD5C5C; order: 60;" data-luma="dark">
+        <section data-order="60" style="background: indianred; order: 60" data-luma="dark">
             <h2>indianred</h2>
             <ul>
                 <li>rgb(205,92,92)</li>
+                <li>hsl(0,53%,58%)</li>
                 <li>#CD5C5C</li>
             </ul>
         </section>
-        <section data-order="61" style="background: #4B0082; order: 61;" data-luma="dark">
+        <section data-order="61" style="background: indigo; order: 61" data-luma="dark">
             <h2>indigo</h2>
             <ul>
                 <li>rgb(75,0,130)</li>
+                <li>hsl(275,100%,25%)</li>
                 <li>#4B0082</li>
             </ul>
         </section>
-        <section data-order="62" style="background: #FFFFF0; order: 62;">
+        <section data-order="62" style="background: ivory; order: 62" data-luma="light">
             <h2>ivory</h2>
             <ul>
                 <li>rgb(255,255,240)</li>
+                <li>hsl(60,100%,97%)</li>
                 <li>#FFFFF0</li>
             </ul>
         </section>
-        <section data-order="63" style="background: #F0E68C; order: 63;">
+        <section data-order="63" style="background: khaki; order: 63" data-luma="light">
             <h2>khaki</h2>
             <ul>
                 <li>rgb(240,230,140)</li>
+                <li>hsl(54,77%,75%)</li>
                 <li>#F0E68C</li>
             </ul>
         </section>
-        <section data-order="64" style="background: #E6E6FA; order: 64;">
+        <section data-order="64" style="background: lavender; order: 64" data-luma="light">
             <h2>lavender</h2>
             <ul>
                 <li>rgb(230,230,250)</li>
+                <li>hsl(240,67%,94%)</li>
                 <li>#E6E6FA</li>
             </ul>
         </section>
-        <section data-order="65" style="background: #FFF0F5; order: 65;">
+        <section data-order="65" style="background: lavenderblush; order: 65" data-luma="light">
             <h2>lavenderblush</h2>
             <ul>
                 <li>rgb(255,240,245)</li>
+                <li>hsl(340,100%,97%)</li>
                 <li>#FFF0F5</li>
             </ul>
         </section>
-        <section data-order="66" style="background: #7CFC00; order: 66;">
+        <section data-order="66" style="background: lawngreen; order: 66" data-luma="light">
             <h2>lawngreen</h2>
             <ul>
                 <li>rgb(124,252,0)</li>
+                <li>hsl(90,100%,49%)</li>
                 <li>#7CFC00</li>
             </ul>
         </section>
-        <section data-order="67" style="background: #FFFACD; order: 67;">
+        <section data-order="67" style="background: lemonchiffon; order: 67" data-luma="light">
             <h2>lemonchiffon</h2>
             <ul>
                 <li>rgb(255,250,205)</li>
+                <li>hsl(54,100%,90%)</li>
                 <li>#FFFACD</li>
             </ul>
         </section>
-        <section data-order="68" style="background: #ADD8E6; order: 68;">
+        <section data-order="68" style="background: lightblue; order: 68" data-luma="light">
             <h2>lightblue</h2>
             <ul>
                 <li>rgb(173,216,230)</li>
+                <li>hsl(195,53%,79%)</li>
                 <li>#ADD8E6</li>
             </ul>
         </section>
-        <section data-order="69" style="background: #F08080; order: 69;">
+        <section data-order="69" style="background: lightcoral; order: 69" data-luma="light">
             <h2>lightcoral</h2>
             <ul>
                 <li>rgb(240,128,128)</li>
+                <li>hsl(0,79%,72%)</li>
                 <li>#F08080</li>
             </ul>
         </section>
-        <section data-order="70" style="background: #E0FFFF; order: 70;">
+        <section data-order="70" style="background: lightcyan; order: 70" data-luma="light">
             <h2>lightcyan</h2>
             <ul>
                 <li>rgb(224,255,255)</li>
+                <li>hsl(180,100%,94%)</li>
                 <li>#E0FFFF</li>
             </ul>
         </section>
-        <section data-order="71" style="background: #FAFAD2; order: 71;">
+        <section data-order="71" style="background: lightgoldenrodyellow; order: 71" data-luma="light">
             <h2>lightgoldenrodyellow</h2>
             <ul>
                 <li>rgb(250,250,210)</li>
+                <li>hsl(60,80%,90%)</li>
                 <li>#FAFAD2</li>
             </ul>
         </section>
-        <section data-order="72" style="background: #D3D3D3; order: 72;">
+        <section data-order="72" style="background: lightgray; order: 72" data-luma="light">
             <h2>lightgray</h2>
             <ul>
                 <li>rgb(211,211,211)</li>
+                <li>hsl(0,0%,83%)</li>
                 <li>#D3D3D3</li>
             </ul>
         </section>
-        <section data-order="73" style="background: #90EE90; order: 73;">
+        <section data-order="73" style="background: lightgreen; order: 73" data-luma="light">
             <h2>lightgreen</h2>
             <ul>
                 <li>rgb(144,238,144)</li>
+                <li>hsl(120,73%,75%)</li>
                 <li>#90EE90</li>
             </ul>
         </section>
-        <section data-order="74" style="background: #D3D3D3; order: 74;">
+        <section data-order="74" style="background: lightgrey; order: 74" data-luma="light">
             <h2>lightgrey</h2>
             <ul>
                 <li>rgb(211,211,211)</li>
+                <li>hsl(0,0%,83%)</li>
                 <li>#D3D3D3</li>
             </ul>
         </section>
-        <section data-order="75" style="background: #FFB6C1; order: 75;">
+        <section data-order="75" style="background: lightpink; order: 75" data-luma="light">
             <h2>lightpink</h2>
             <ul>
                 <li>rgb(255,182,193)</li>
+                <li>hsl(351,100%,86%)</li>
                 <li>#FFB6C1</li>
             </ul>
         </section>
-        <section data-order="76" style="background: #FFA07A; order: 76;">
+        <section data-order="76" style="background: lightsalmon; order: 76" data-luma="light">
             <h2>lightsalmon</h2>
             <ul>
                 <li>rgb(255,160,122)</li>
+                <li>hsl(17,100%,74%)</li>
                 <li>#FFA07A</li>
             </ul>
         </section>
-        <section data-order="77" style="background: #20B2AA; order: 77;">
+        <section data-order="77" style="background: lightseagreen; order: 77" data-luma="light">
             <h2>lightseagreen</h2>
             <ul>
                 <li>rgb(32,178,170)</li>
+                <li>hsl(177,70%,41%)</li>
                 <li>#20B2AA</li>
             </ul>
         </section>
-        <section data-order="78" style="background: #87CEFA; order: 78;">
+        <section data-order="78" style="background: lightskyblue; order: 78" data-luma="light">
             <h2>lightskyblue</h2>
             <ul>
                 <li>rgb(135,206,250)</li>
+                <li>hsl(203,92%,75%)</li>
                 <li>#87CEFA</li>
             </ul>
         </section>
-        <section data-order="79" style="background: #778899; order: 79;">
+        <section data-order="79" style="background: lightslategray; order: 79" data-luma="light">
             <h2>lightslategray</h2>
             <ul>
                 <li>rgb(119,136,153)</li>
+                <li>hsl(210,14%,53%)</li>
                 <li>#778899</li>
             </ul>
         </section>
-        <section data-order="80" style="background: #778899; order: 80;">
+        <section data-order="80" style="background: lightslategrey; order: 80" data-luma="light">
             <h2>lightslategrey</h2>
             <ul>
                 <li>rgb(119,136,153)</li>
+                <li>hsl(210,14%,53%)</li>
                 <li>#778899</li>
             </ul>
         </section>
-        <section data-order="81" style="background: #B0C4DE; order: 81;">
+        <section data-order="81" style="background: lightsteelblue; order: 81" data-luma="light">
             <h2>lightsteelblue</h2>
             <ul>
                 <li>rgb(176,196,222)</li>
+                <li>hsl(214,41%,78%)</li>
                 <li>#B0C4DE</li>
             </ul>
         </section>
-        <section data-order="82" style="background: #FFFFE0; order: 82;">
+        <section data-order="82" style="background: lightyellow; order: 82" data-luma="light">
             <h2>lightyellow</h2>
             <ul>
                 <li>rgb(255,255,224)</li>
+                <li>hsl(60,100%,94%)</li>
                 <li>#FFFFE0</li>
             </ul>
         </section>
-        <section data-order="83" style="background: #00FF00; order: 83;">
+        <section data-order="83" style="background: lime; order: 83" data-luma="light">
             <h2>lime</h2>
             <ul>
                 <li>rgb(0,255,0)</li>
+                <li>hsl(120,100%,50%)</li>
                 <li>#00FF00</li>
             </ul>
         </section>
-        <section data-order="84" style="background: #32CD32; order: 84;">
+        <section data-order="84" style="background: limegreen; order: 84" data-luma="light">
             <h2>limegreen</h2>
             <ul>
                 <li>rgb(50,205,50)</li>
+                <li>hsl(120,61%,50%)</li>
                 <li>#32CD32</li>
             </ul>
         </section>
-        <section data-order="85" style="background: #FAF0E6; order: 85;">
+        <section data-order="85" style="background: linen; order: 85" data-luma="light">
             <h2>linen</h2>
             <ul>
                 <li>rgb(250,240,230)</li>
+                <li>hsl(30,67%,94%)</li>
                 <li>#FAF0E6</li>
             </ul>
         </section>
-        <section data-order="86" style="background: #FF00FF; order: 86;" data-luma="dark">
+        <section data-order="86" style="background: magenta; order: 86" data-luma="dark">
             <h2>magenta</h2>
             <ul>
                 <li>rgb(255,0,255)</li>
+                <li>hsl(300,100%,50%)</li>
                 <li>#FF00FF</li>
             </ul>
         </section>
-        <section data-order="87" style="background: #800000; order: 87;" data-luma="dark">
+        <section data-order="87" style="background: maroon; order: 87" data-luma="dark">
             <h2>maroon</h2>
             <ul>
                 <li>rgb(128,0,0)</li>
+                <li>hsl(0,100%,25%)</li>
                 <li>#800000</li>
             </ul>
         </section>
-        <section data-order="88" style="background: #66CDAA; order: 88;">
+        <section data-order="88" style="background: mediumaquamarine; order: 88" data-luma="light">
             <h2>mediumaquamarine</h2>
             <ul>
                 <li>rgb(102,205,170)</li>
+                <li>hsl(160,51%,60%)</li>
                 <li>#66CDAA</li>
             </ul>
         </section>
-        <section data-order="89" style="background: #0000CD; order: 89;" data-luma="dark">
+        <section data-order="89" style="background: mediumblue; order: 89" data-luma="dark">
             <h2>mediumblue</h2>
             <ul>
                 <li>rgb(0,0,205)</li>
+                <li>hsl(240,100%,40%)</li>
                 <li>#0000CD</li>
             </ul>
         </section>
-        <section data-order="90" style="background: #BA55D3; order: 90;" data-luma="dark">
+        <section data-order="90" style="background: mediumorchid; order: 90" data-luma="dark">
             <h2>mediumorchid</h2>
             <ul>
                 <li>rgb(186,85,211)</li>
+                <li>hsl(288,59%,58%)</li>
                 <li>#BA55D3</li>
             </ul>
         </section>
-        <section data-order="91" style="background: #9370DB; order: 91;" data-luma="dark">
+        <section data-order="91" style="background: mediumpurple; order: 91" data-luma="dark">
             <h2>mediumpurple</h2>
             <ul>
                 <li>rgb(147,112,219)</li>
+                <li>hsl(260,60%,65%)</li>
                 <li>#9370DB</li>
             </ul>
         </section>
-        <section data-order="92" style="background: #3CB371; order: 92;">
+        <section data-order="92" style="background: mediumseagreen; order: 92" data-luma="light">
             <h2>mediumseagreen</h2>
             <ul>
                 <li>rgb(60,179,113)</li>
+                <li>hsl(147,50%,47%)</li>
                 <li>#3CB371</li>
             </ul>
         </section>
-        <section data-order="93" style="background: #7B68EE; order: 93;" data-luma="dark">
+        <section data-order="93" style="background: mediumslateblue; order: 93" data-luma="dark">
             <h2>mediumslateblue</h2>
             <ul>
                 <li>rgb(123,104,238)</li>
+                <li>hsl(249,80%,67%)</li>
                 <li>#7B68EE</li>
             </ul>
         </section>
-        <section data-order="94" style="background: #00FA9A; order: 94;">
+        <section data-order="94" style="background: mediumspringgreen; order: 94" data-luma="light">
             <h2>mediumspringgreen</h2>
             <ul>
                 <li>rgb(0,250,154)</li>
+                <li>hsl(157,100%,49%)</li>
                 <li>#00FA9A</li>
             </ul>
         </section>
-        <section data-order="95" style="background: #48D1CC; order: 95;">
+        <section data-order="95" style="background: mediumturquoise; order: 95" data-luma="light">
             <h2>mediumturquoise</h2>
             <ul>
                 <li>rgb(72,209,204)</li>
+                <li>hsl(178,60%,55%)</li>
                 <li>#48D1CC</li>
             </ul>
         </section>
-        <section data-order="96" style="background: #C71585; order: 96;" data-luma="dark">
+        <section data-order="96" style="background: mediumvioletred; order: 96" data-luma="dark">
             <h2>mediumvioletred</h2>
             <ul>
                 <li>rgb(199,21,133)</li>
+                <li>hsl(322,81%,43%)</li>
                 <li>#C71585</li>
             </ul>
         </section>
-        <section data-order="97" style="background: #191970; order: 97;" data-luma="dark">
+        <section data-order="97" style="background: midnightblue; order: 97" data-luma="dark">
             <h2>midnightblue</h2>
             <ul>
                 <li>rgb(25,25,112)</li>
+                <li>hsl(240,64%,27%)</li>
                 <li>#191970</li>
             </ul>
         </section>
-        <section data-order="98" style="background: #F5FFFA; order: 98;">
+        <section data-order="98" style="background: mintcream; order: 98" data-luma="light">
             <h2>mintcream</h2>
             <ul>
                 <li>rgb(245,255,250)</li>
+                <li>hsl(150,100%,98%)</li>
                 <li>#F5FFFA</li>
             </ul>
         </section>
-        <section data-order="99" style="background: #FFE4E1; order: 99;">
+        <section data-order="99" style="background: mistyrose; order: 99" data-luma="light">
             <h2>mistyrose</h2>
             <ul>
                 <li>rgb(255,228,225)</li>
+                <li>hsl(6,100%,94%)</li>
                 <li>#FFE4E1</li>
             </ul>
         </section>
-        <section data-order="100" style="background: #FFE4B5; order: 100;">
+        <section data-order="100" style="background: moccasin; order: 100" data-luma="light">
             <h2>moccasin</h2>
             <ul>
                 <li>rgb(255,228,181)</li>
+                <li>hsl(38,100%,85%)</li>
                 <li>#FFE4B5</li>
             </ul>
         </section>
-        <section data-order="101" style="background: #FFDEAD; order: 101;">
+        <section data-order="101" style="background: navajowhite; order: 101" data-luma="light">
             <h2>navajowhite</h2>
             <ul>
                 <li>rgb(255,222,173)</li>
+                <li>hsl(36,100%,84%)</li>
                 <li>#FFDEAD</li>
             </ul>
         </section>
-        <section data-order="102" style="background: #000080; order: 102;" data-luma="dark">
+        <section data-order="102" style="background: navy; order: 102" data-luma="dark">
             <h2>navy</h2>
             <ul>
                 <li>rgb(0,0,128)</li>
+                <li>hsl(240,100%,25%)</li>
                 <li>#000080</li>
             </ul>
         </section>
-        <section data-order="103" style="background: #FDF5E6; order: 103;">
+        <section data-order="103" style="background: oldlace; order: 103" data-luma="light">
             <h2>oldlace</h2>
             <ul>
                 <li>rgb(253,245,230)</li>
+                <li>hsl(39,85%,95%)</li>
                 <li>#FDF5E6</li>
             </ul>
         </section>
-        <section data-order="104" style="background: #808000; order: 104;" data-luma="dark">
+        <section data-order="104" style="background: olive; order: 104" data-luma="dark">
             <h2>olive</h2>
             <ul>
                 <li>rgb(128,128,0)</li>
+                <li>hsl(60,100%,25%)</li>
                 <li>#808000</li>
             </ul>
         </section>
-        <section data-order="105" style="background: #6B8E23; order: 105;" data-luma="dark">
+        <section data-order="105" style="background: olivedrab; order: 105" data-luma="dark">
             <h2>olivedrab</h2>
             <ul>
                 <li>rgb(107,142,35)</li>
+                <li>hsl(80,60%,35%)</li>
                 <li>#6B8E23</li>
             </ul>
         </section>
-        <section data-order="106" style="background: #FFA500; order: 106;">
+        <section data-order="106" style="background: orange; order: 106" data-luma="light">
             <h2>orange</h2>
             <ul>
                 <li>rgb(255,165,0)</li>
+                <li>hsl(39,100%,50%)</li>
                 <li>#FFA500</li>
             </ul>
         </section>
-        <section data-order="107" style="background: #FF4500; order: 107;" data-luma="dark">
+        <section data-order="107" style="background: orangered; order: 107" data-luma="dark">
             <h2>orangered</h2>
             <ul>
                 <li>rgb(255,69,0)</li>
+                <li>hsl(16,100%,50%)</li>
                 <li>#FF4500</li>
             </ul>
         </section>
-        <section data-order="108" style="background: #DA70D6; order: 108;">
+        <section data-order="108" style="background: orchid; order: 108" data-luma="light">
             <h2>orchid</h2>
             <ul>
                 <li>rgb(218,112,214)</li>
+                <li>hsl(302,59%,65%)</li>
                 <li>#DA70D6</li>
             </ul>
         </section>
-        <section data-order="109" style="background: #EEE8AA; order: 109;">
+        <section data-order="109" style="background: palegoldenrod; order: 109" data-luma="light">
             <h2>palegoldenrod</h2>
             <ul>
                 <li>rgb(238,232,170)</li>
+                <li>hsl(55,67%,80%)</li>
                 <li>#EEE8AA</li>
             </ul>
         </section>
-        <section data-order="110" style="background: #98FB98; order: 110;">
+        <section data-order="110" style="background: palegreen; order: 110" data-luma="light">
             <h2>palegreen</h2>
             <ul>
                 <li>rgb(152,251,152)</li>
+                <li>hsl(120,93%,79%)</li>
                 <li>#98FB98</li>
             </ul>
         </section>
-        <section data-order="111" style="background: #AFEEEE; order: 111;">
+        <section data-order="111" style="background: paleturquoise; order: 111" data-luma="light">
             <h2>paleturquoise</h2>
             <ul>
                 <li>rgb(175,238,238)</li>
+                <li>hsl(180,65%,81%)</li>
                 <li>#AFEEEE</li>
             </ul>
         </section>
-        <section data-order="112" style="background: #DB7093; order: 112;">
+        <section data-order="112" style="background: palevioletred; order: 112" data-luma="light">
             <h2>palevioletred</h2>
             <ul>
                 <li>rgb(219,112,147)</li>
+                <li>hsl(340,60%,65%)</li>
                 <li>#DB7093</li>
             </ul>
         </section>
-        <section data-order="113" style="background: #FFEFD5; order: 113;">
+        <section data-order="113" style="background: papayawhip; order: 113" data-luma="light">
             <h2>papayawhip</h2>
             <ul>
                 <li>rgb(255,239,213)</li>
+                <li>hsl(37,100%,92%)</li>
                 <li>#FFEFD5</li>
             </ul>
         </section>
-        <section data-order="114" style="background: #FFDAB9; order: 114;">
+        <section data-order="114" style="background: peachpuff; order: 114" data-luma="light">
             <h2>peachpuff</h2>
             <ul>
                 <li>rgb(255,218,185)</li>
+                <li>hsl(28,100%,86%)</li>
                 <li>#FFDAB9</li>
             </ul>
         </section>
-        <section data-order="115" style="background: #CD853F; order: 115;">
+        <section data-order="115" style="background: peru; order: 115" data-luma="light">
             <h2>peru</h2>
             <ul>
                 <li>rgb(205,133,63)</li>
+                <li>hsl(30,59%,53%)</li>
                 <li>#CD853F</li>
             </ul>
         </section>
-        <section data-order="116" style="background: #FFC0CB; order: 116;">
+        <section data-order="116" style="background: pink; order: 116" data-luma="light">
             <h2>pink</h2>
             <ul>
                 <li>rgb(255,192,203)</li>
+                <li>hsl(350,100%,88%)</li>
                 <li>#FFC0CB</li>
             </ul>
         </section>
-        <section data-order="117" style="background: #DDA0DD; order: 117;">
+        <section data-order="117" style="background: plum; order: 117" data-luma="light">
             <h2>plum</h2>
             <ul>
                 <li>rgb(221,160,221)</li>
+                <li>hsl(300,47%,75%)</li>
                 <li>#DDA0DD</li>
             </ul>
         </section>
-        <section data-order="118" style="background: #B0E0E6; order: 118;">
+        <section data-order="118" style="background: powderblue; order: 118" data-luma="light">
             <h2>powderblue</h2>
             <ul>
                 <li>rgb(176,224,230)</li>
+                <li>hsl(187,52%,80%)</li>
                 <li>#B0E0E6</li>
             </ul>
         </section>
-        <section data-order="119" style="background: #800080; order: 119;" data-luma="dark">
+        <section data-order="119" style="background: purple; order: 119" data-luma="dark">
             <h2>purple</h2>
             <ul>
                 <li>rgb(128,0,128)</li>
+                <li>hsl(300,100%,25%)</li>
                 <li>#800080</li>
             </ul>
         </section>
-        <section data-order="120" style="background: #FF0000; order: 120;" data-luma="dark">
+        <section data-order="120" style="background: red; order: 120" data-luma="dark">
             <h2>red</h2>
             <ul>
                 <li>rgb(255,0,0)</li>
+                <li>hsl(0,100%,50%)</li>
                 <li>#FF0000</li>
             </ul>
         </section>
-        <section data-order="121" style="background: #BC8F8F; order: 121;">
+        <section data-order="121" style="background: rosybrown; order: 121" data-luma="light">
             <h2>rosybrown</h2>
             <ul>
                 <li>rgb(188,143,143)</li>
+                <li>hsl(0,25%,65%)</li>
                 <li>#BC8F8F</li>
             </ul>
         </section>
-        <section data-order="122" style="background: #4169E1; order: 122;" data-luma="dark">
+        <section data-order="122" style="background: royalblue; order: 122" data-luma="dark">
             <h2>royalblue</h2>
             <ul>
                 <li>rgb(65,105,225)</li>
+                <li>hsl(225,73%,57%)</li>
                 <li>#4169E1</li>
             </ul>
         </section>
-        <section data-order="123" style="background: #8B4513; order: 123;" data-luma="dark">
+        <section data-order="123" style="background: saddlebrown; order: 123" data-luma="dark">
             <h2>saddlebrown</h2>
             <ul>
                 <li>rgb(139,69,19)</li>
+                <li>hsl(25,76%,31%)</li>
                 <li>#8B4513</li>
             </ul>
         </section>
-        <section data-order="124" style="background: #FA8072; order: 124;">
+        <section data-order="124" style="background: salmon; order: 124" data-luma="light">
             <h2>salmon</h2>
             <ul>
                 <li>rgb(250,128,114)</li>
+                <li>hsl(6,93%,71%)</li>
                 <li>#FA8072</li>
             </ul>
         </section>
-        <section data-order="125" style="background: #F4A460; order: 125;">
+        <section data-order="125" style="background: sandybrown; order: 125" data-luma="light">
             <h2>sandybrown</h2>
             <ul>
                 <li>rgb(244,164,96)</li>
+                <li>hsl(28,87%,67%)</li>
                 <li>#F4A460</li>
             </ul>
         </section>
-        <section data-order="126" style="background: #2E8B57; order: 126;" data-luma="dark">
+        <section data-order="126" style="background: seagreen; order: 126" data-luma="dark">
             <h2>seagreen</h2>
             <ul>
                 <li>rgb(46,139,87)</li>
+                <li>hsl(146,50%,36%)</li>
                 <li>#2E8B57</li>
             </ul>
         </section>
-        <section data-order="127" style="background: #FFF5EE; order: 127;">
+        <section data-order="127" style="background: seashell; order: 127" data-luma="light">
             <h2>seashell</h2>
             <ul>
                 <li>rgb(255,245,238)</li>
+                <li>hsl(25,100%,97%)</li>
                 <li>#FFF5EE</li>
             </ul>
         </section>
-        <section data-order="128" style="background: #A0522D; order: 128;" data-luma="dark">
+        <section data-order="128" style="background: sienna; order: 128" data-luma="dark">
             <h2>sienna</h2>
             <ul>
                 <li>rgb(160,82,45)</li>
+                <li>hsl(19,56%,40%)</li>
                 <li>#A0522D</li>
             </ul>
         </section>
-        <section data-order="129" style="background: #C0C0C0; order: 129;">
+        <section data-order="129" style="background: silver; order: 129" data-luma="light">
             <h2>silver</h2>
             <ul>
                 <li>rgb(192,192,192)</li>
+                <li>hsl(0,0%,75%)</li>
                 <li>#C0C0C0</li>
             </ul>
         </section>
-        <section data-order="130" style="background: #87CEEB; order: 130;">
+        <section data-order="130" style="background: skyblue; order: 130" data-luma="light">
             <h2>skyblue</h2>
             <ul>
                 <li>rgb(135,206,235)</li>
+                <li>hsl(197,71%,73%)</li>
                 <li>#87CEEB</li>
             </ul>
         </section>
-        <section data-order="131" style="background: #6A5ACD; order: 131;" data-luma="dark">
+        <section data-order="131" style="background: slateblue; order: 131" data-luma="dark">
             <h2>slateblue</h2>
             <ul>
                 <li>rgb(106,90,205)</li>
+                <li>hsl(248,53%,58%)</li>
                 <li>#6A5ACD</li>
             </ul>
         </section>
-        <section data-order="132" style="background: #708090; order: 132;" data-luma="dark">
+        <section data-order="132" style="background: slategray; order: 132" data-luma="dark">
             <h2>slategray</h2>
             <ul>
                 <li>rgb(112,128,144)</li>
+                <li>hsl(210,13%,50%)</li>
                 <li>#708090</li>
             </ul>
         </section>
-        <section data-order="133" style="background: #708090; order: 133;" data-luma="dark">
+        <section data-order="133" style="background: slategrey; order: 133" data-luma="dark">
             <h2>slategrey</h2>
             <ul>
                 <li>rgb(112,128,144)</li>
+                <li>hsl(210,13%,50%)</li>
                 <li>#708090</li>
             </ul>
         </section>
-        <section data-order="134" style="background: #FFFAFA; order: 134;">
+        <section data-order="134" style="background: snow; order: 134" data-luma="light">
             <h2>snow</h2>
             <ul>
                 <li>rgb(255,250,250)</li>
+                <li>hsl(0,100%,99%)</li>
                 <li>#FFFAFA</li>
             </ul>
         </section>
-        <section data-order="135" style="background: #00FF7F; order: 135;">
+        <section data-order="135" style="background: springgreen; order: 135" data-luma="light">
             <h2>springgreen</h2>
             <ul>
                 <li>rgb(0,255,127)</li>
+                <li>hsl(150,100%,50%)</li>
                 <li>#00FF7F</li>
             </ul>
         </section>
-        <section data-order="136" style="background: #4682B4; order: 136;" data-luma="dark">
+        <section data-order="136" style="background: steelblue; order: 136" data-luma="dark">
             <h2>steelblue</h2>
             <ul>
                 <li>rgb(70,130,180)</li>
+                <li>hsl(207,44%,49%)</li>
                 <li>#4682B4</li>
             </ul>
         </section>
-        <section data-order="137" style="background: #D2B48C; order: 137;">
+        <section data-order="137" style="background: tan; order: 137" data-luma="light">
             <h2>tan</h2>
             <ul>
                 <li>rgb(210,180,140)</li>
+                <li>hsl(34,44%,69%)</li>
                 <li>#D2B48C</li>
             </ul>
         </section>
-        <section data-order="138" style="background: #008080; order: 138;" data-luma="dark">
+        <section data-order="138" style="background: teal; order: 138" data-luma="dark">
             <h2>teal</h2>
             <ul>
                 <li>rgb(0,128,128)</li>
+                <li>hsl(180,100%,25%)</li>
                 <li>#008080</li>
             </ul>
         </section>
-        <section data-order="139" style="background: #D8BFD8; order: 139;">
+        <section data-order="139" style="background: thistle; order: 139" data-luma="light">
             <h2>thistle</h2>
             <ul>
                 <li>rgb(216,191,216)</li>
+                <li>hsl(300,24%,80%)</li>
                 <li>#D8BFD8</li>
             </ul>
         </section>
-        <section data-order="140" style="background: #FF6347; order: 140;">
+        <section data-order="140" style="background: tomato; order: 140" data-luma="light">
             <h2>tomato</h2>
             <ul>
                 <li>rgb(255,99,71)</li>
+                <li>hsl(9,100%,64%)</li>
                 <li>#FF6347</li>
             </ul>
         </section>
-        <section data-order="141" style="background: #40E0D0; order: 141;">
+        <section data-order="141" style="background: turquoise; order: 141" data-luma="light">
             <h2>turquoise</h2>
             <ul>
                 <li>rgb(64,224,208)</li>
+                <li>hsl(174,72%,56%)</li>
                 <li>#40E0D0</li>
             </ul>
         </section>
-        <section data-order="142" style="background: #EE82EE; order: 142;">
+        <section data-order="142" style="background: violet; order: 142" data-luma="light">
             <h2>violet</h2>
             <ul>
                 <li>rgb(238,130,238)</li>
+                <li>hsl(300,76%,72%)</li>
                 <li>#EE82EE</li>
             </ul>
         </section>
-        <section data-order="143" style="background: #F5DEB3; order: 143;">
+        <section data-order="143" style="background: wheat; order: 143" data-luma="light">
             <h2>wheat</h2>
             <ul>
                 <li>rgb(245,222,179)</li>
+                <li>hsl(39,77%,83%)</li>
                 <li>#F5DEB3</li>
             </ul>
         </section>
-        <section data-order="144" style="background: #FFFFFF; order: 144;">
+        <section data-order="144" style="background: white; order: 144" data-luma="light">
             <h2>white</h2>
             <ul>
                 <li>rgb(255,255,255)</li>
+                <li>hsl(0,100%,100%)</li>
                 <li>#FFFFFF</li>
             </ul>
         </section>
-        <section data-order="145" style="background: #F5F5F5; order: 145;">
+        <section data-order="145" style="background: whitesmoke; order: 145" data-luma="light">
             <h2>whitesmoke</h2>
             <ul>
                 <li>rgb(245,245,245)</li>
+                <li>hsl(0,0%,96%)</li>
                 <li>#F5F5F5</li>
             </ul>
         </section>
-        <section data-order="146" style="background: #FFFF00; order: 146;">
+        <section data-order="146" style="background: yellow; order: 146" data-luma="light">
             <h2>yellow</h2>
             <ul>
                 <li>rgb(255,255,0)</li>
+                <li>hsl(60,100%,50%)</li>
                 <li>#FFFF00</li>
             </ul>
         </section>
-        <section data-order="147" style="background: #9ACD32; order: 147;">
+        <section data-order="147" style="background: yellowgreen; order: 147" data-luma="light">
             <h2>yellowgreen</h2>
             <ul>
                 <li>rgb(154,205,50)</li>
+                <li>hsl(80,61%,50%)</li>
                 <li>#9ACD32</li>
             </ul>
         </section>
