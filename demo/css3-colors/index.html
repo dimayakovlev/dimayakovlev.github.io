@@ -48,7 +48,6 @@
         }
 
         section {
-            cursor: pointer;
             min-height: calc(100vh / 4);
             padding: 1rem;
             display: flex;
@@ -1291,31 +1290,14 @@
 
     </main>
     <script>
-        var btn = document.querySelector('input[type="button"]');
-        var sec = document.querySelectorAll('section');
-        var fullElement = null;
+        var btn = document.querySelector('input[type="button"]'),
+            sec = document.querySelectorAll('section');
 
         btn.addEventListener('click', function (e) {
             shuffle(sec);
         });
 
         if (location.hash == '#random') shuffle(sec);
-
-        sec.forEach(function(elem, i) {
-            elem.addEventListener('click', function(e) {
-                if (fullElement == this) {
-                    this.style.minHeight = '';
-                    fullElement = null;
-                } else {
-                    if (fullElement) {
-                        fullElement.style.minHeight = '';
-                    }
-                    this.style.minHeight = '100vh';
-                    fullElement = this;
-                    smoothScroll(this);
-                }
-            });
-        });
 
         function shuffle(elems) {
             var c = Array.from(Array(elems.length).keys());
@@ -1330,38 +1312,6 @@
                 const j = Math.floor(Math.random() * (i + 1));
                 [array[i], array[j]] = [array[j], array[i]];
             }
-        }
-
-        function smoothScroll(element) {
-            var MIN_PIXELS_PER_STEP = 16;
-            var MAX_SCROLL_STEPS = 30;
-            var target = element;
-            var scrollContainer = target;
-            do {
-                scrollContainer = scrollContainer.parentNode;
-                if (!scrollContainer) return;
-                scrollContainer.scrollTop += 1;
-            } while (scrollContainer.scrollTop == 0);
-
-            var targetY = 0;
-            do {
-                if (target == scrollContainer) break;
-                targetY += target.offsetTop;
-            } while (target = target.offsetParent);
-
-            var pixelsPerStep = Math.max(MIN_PIXELS_PER_STEP, (targetY - scrollContainer.scrollTop) / MAX_SCROLL_STEPS);
-
-            var stepFunc = function() {
-                scrollContainer.scrollTop = Math.min(targetY, pixelsPerStep + scrollContainer.scrollTop);
-
-                if (scrollContainer.scrollTop >= targetY) {
-                    return;
-                }
-
-                window.requestAnimationFrame(stepFunc);
-            };
-
-            window.requestAnimationFrame(stepFunc);
         }
     </script>
 </body>
