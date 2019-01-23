@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>The Beatles Studio Discography</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        ul {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-gap: 1rem;
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            border: 1px solid;
+            border-radius: .5rem;
+        }
+        img {
+            width: 100%;
+        }
+        figure {
+            margin: 1rem;
+        }
+        figcaption {
+            display: flex;
+            flex-direction: column-reverse;
+        }
+        article {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        main > p {
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.4rem;
+        }
+        footer {
+            text-align: center;
+        }
+        footer > p:first-child {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+
+    <article>
+        <header>
+            <h1>The Beatles Studio Discography</h1>
+        </header>
+        <main></main>
+        <footer>
+            <p>Albums covers are provided by <a href="https://www.apple.com/itunes/" target="_blank">iTunes</a></p>
+            <p><a href="/">Go to Index</a></p>
+        </footer>
+    </article>
+
+    <script>
+        var requestURL = 'https://gist.githubusercontent.com/dimayakovlev/ffbe59c73393d254fd66fd29dffc97e5/raw/405d86ecaf3d4515ab0d907154fb798900d0fe12/discography-the-beatles.json';
+        var xhr = new XMLHttpRequest();
+        xhr.responseType = 'json';
+        xhr.open('GET', requestURL);
+        xhr.send();
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4) {
+                (xhr.status === 200) ? buildList(xhr.response) : showError();
+            }
+        }
+
+        function buildList(data) {
+            var ul = document.createElement('ul');
+            document.querySelector('main').appendChild(ul);
+            data.forEach(element => {
+                let year = element['date'].substr(6, 4);
+                let li = document.createElement('li');
+                li.innerHTML = '<figure><img src="' + element['cover'] + '" alt="' + element['artist'] + '. ' + element['album'] + '"><figcaption><h2>' + element['album'] + '</h2><p>' + year + '</p></figcaption></figure>';
+                ul.appendChild(li);
+            });
+        }
+
+        function showError() {
+            var p = document.createElement('p');
+            p.innerHTML = 'Data is not available!';
+            document.querySelector('main').appendChild(p);
+        }
+    </script>
+    
+</body>
+</html>
