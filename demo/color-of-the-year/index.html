@@ -12,6 +12,7 @@
     <style>
         * {
             box-sizing: border-box;
+            transition: all .3s 0s;
         }
         :root {
             --color: #0F4C81;
@@ -41,7 +42,7 @@
             margin: .5rem 0 0 0;
         }
         form {
-            display: none;
+            visibility: hidden;
         }
         input[name="year"] {
             width: 100%;
@@ -112,7 +113,7 @@
                 currentColorHEXContainer.innerHTML = COLORS[year][1];
             }
 
-            document.querySelector('form').style.display = 'block';
+            document.querySelector('form').style.visibility = 'visible';
 
             if (parameterYear && COLORS[parameterYear]) range.value = parameterYear;
             
