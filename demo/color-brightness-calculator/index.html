@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Brightness Calculator</title>
+    <meta name="description" content="Calculate brightness of RGB color">
+    <meta name="keywords" content="color, brightness, value, rgb">
+    <meta name="author" content="Dmitry Yakovlev">
+    <link rel="icon" type="image/svg+xml" href="/demo/color-brightness-calculator/rgb.png" sizes="any"/>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        html, body {
+            margin: 0;
+        }
+        body {
+            --color: rgb(255,255,255);
+            --colorBG: rgb(0,0,0);
+            font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+            background-color: var(--colorBG);
+            color: var(--color);
+            text-align: center;
+            min-height: 100vh;
+            font-size: 1em;
+            padding: 1em;
+        }
+        h1 {
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 0;
+            padding: 1rem 0;
+        }
+        form {
+            margin: 0;
+            padding: 1rem 0;
+        }
+        #result {
+            padding: 1rem 0;
+        }
+        #result span:nth-child(1) {
+            font-weight: bold;
+        }
+        #result span:nth-child(2) {
+            display: block;
+            font-size: 2rem;
+            font-weight: bold;
+            padding: 1rem 0;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var rangeR = document.querySelector('input[name="color-r"]'),
+                rangeG = document.querySelector('input[name="color-g"]'),
+                rangeB = document.querySelector('input[name="color-b"]');
+            var elementResult = document.getElementById('result');
+
+            function setColors(rgb, brightness) {
+                document.body.style.setProperty('--colorBG', rgb);
+                document.body.style.setProperty('--color', brightness > 50 ? 'rgb(0,0,0)' : 'rgb(255,255,255)');
+            }
+
+            function main(r, g, b, e) {
+                let colorRGB = `rgb(${r},${g},${b})`,
+                    brightness = ((r*299)+(g*587)+(b*114))/1000,
+                    brightnessPercent = brightness/255*100;
+                    brightnessPercentRound = Math.round(brightnessPercent);
+
+                setColors(colorRGB, brightnessPercentRound);
+
+                e.innerHTML = `<p>The lightness of <span>${colorRGB}</span> color is: <span>~ ${brightnessPercentRound}%</span> <span>${brightnessPercent}%</span></p>`;
+            }
+            
+            main(rangeR.value, rangeG.value, rangeB.value, elementResult);
+
+            [rangeR, rangeG, rangeB].forEach(elem => elem.addEventListener('change', function() {
+                main(rangeR.value, rangeG.value, rangeB.value, elementResult);
+                console.log(this.value);
+            }));
+
+        });
+    </script>
+</head>
+<body>
+    <h1>Color Brightness Calculator</h1>
+    <form>
+        <label for="color-r">R</label>
+        <input type="range" name="color-r" min="0" max="255" step="1" value="0">        
+        <label for="color-g">G</label>
+        <input type="range" name="color-g" min="0" max="255" step="1" value="0">        
+        <label for="color-b">B</label>
+        <input type="range" name="color-b" min="0" max="255" step="1" value="0">        
+    </form>
+    <div id="result"><p>Not calculated yet. JavaScript must be enabled</p></div>
+
+</body>
+</html>
