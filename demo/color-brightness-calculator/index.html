@@ -45,6 +45,9 @@
         form label {
             font-weight: bold;
         }
+        button {
+            padding: .5rem;
+        }
         #result {
             padding: 1rem 0;
         }
@@ -63,11 +66,11 @@
             var rangeR = document.querySelector('input[name="color-r"]'),
                 rangeG = document.querySelector('input[name="color-g"]'),
                 rangeB = document.querySelector('input[name="color-b"]');
-            var elementResult = document.getElementById('result');
+            var elementResult = document.getElementById('result'),
+                btnRandom = document.querySelector('button[name="random"]');
             var random = function(min, max) {
                 return Math.floor(min + Math.random() * (max + 1 - min));
             };
-            var randomize = false;
 
             function main(r, g, b, e) {
                 let colorRGB = `rgb(${r},${g},${b})`,
@@ -85,7 +88,10 @@
                 main(rangeR.value, rangeG.value, rangeB.value, elementResult);
             }));
 
-            if (randomize === true) [rangeR, rangeG, rangeB].forEach(elem => elem.value = random(0, 255));
+            btnRandom.addEventListener('click', function() {
+                [rangeR, rangeG, rangeB].forEach(elem => elem.value = random(0, 255));
+                main(rangeR.value, rangeG.value, rangeB.value, elementResult);
+            });
             
             main(rangeR.value, rangeG.value, rangeB.value, elementResult);
 
@@ -110,6 +116,7 @@
             </span>
         </form>
         <div id="result"><p>Not calculated yet. JavaScript must be enabled</p></div>
+        <p><button name="random" type="button">Random color</button></p>
     </main>
 </body>
 </html>
