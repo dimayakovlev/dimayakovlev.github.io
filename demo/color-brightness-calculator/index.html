@@ -16,25 +16,34 @@
             margin: 0;
         }
         body {
-            --color: rgb(255,255,255);
-            --colorBG: rgb(0,0,0);
             font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
-            background-color: var(--colorBG);
-            color: var(--color);
+            background-color: var(--color-bg, rgb(0,0,0));
+            color: var(--color, rgb(255,255,255));
             text-align: center;
             min-height: 100vh;
             font-size: 1em;
-            padding: 1em;
+            padding: .5em;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            transition: background-color .2s linear, color .2s linear;
         }
         h1 {
-            font-size: 2rem;
+            font-size: 3rem;
             font-weight: bold;
             margin: 0;
             padding: 1rem 0;
+            text-transform: uppercase;
         }
         form {
             margin: 0;
-            padding: 1rem 0;
+            padding: 2rem 0;
+        }
+        form span {
+            display: inline-block;
+        }
+        form label {
+            font-weight: bold;
         }
         #result {
             padding: 1rem 0;
@@ -44,9 +53,9 @@
         }
         #result span:nth-child(2) {
             display: block;
-            font-size: 2rem;
+            font-size: 3rem;
             font-weight: bold;
-            padding: 1rem 0;
+            padding: 2rem 0;
         }
     </style>
     <script>
@@ -55,11 +64,10 @@
                 rangeG = document.querySelector('input[name="color-g"]'),
                 rangeB = document.querySelector('input[name="color-b"]');
             var elementResult = document.getElementById('result');
-
-            function setColors(rgb, brightness) {
-                document.body.style.setProperty('--colorBG', rgb);
-                document.body.style.setProperty('--color', brightness > 50 ? 'rgb(0,0,0)' : 'rgb(255,255,255)');
-            }
+            var random = function(min, max) {
+                return Math.floor(min + Math.random() * (max + 1 - min));
+            };
+            var randomize = false;
 
             function main(r, g, b, e) {
                 let colorRGB = `rgb(${r},${g},${b})`,
@@ -67,32 +75,41 @@
                     brightnessPercent = brightness/255*100;
                     brightnessPercentRound = Math.round(brightnessPercent);
 
-                setColors(colorRGB, brightnessPercentRound);
+                document.body.style.setProperty('--color-bg', colorRGB);
+                document.body.style.setProperty('--color', brightnessPercentRound > 50 ? 'rgb(0,0,0)' : 'rgb(255,255,255)');
 
                 e.innerHTML = `<p>The brightness of <span>${colorRGB}</span> color is: <span>~ ${brightnessPercentRound}%</span> <span>${brightnessPercent}%</span></p>`;
             }
-            
-            main(rangeR.value, rangeG.value, rangeB.value, elementResult);
 
             [rangeR, rangeG, rangeB].forEach(elem => elem.addEventListener('change', function() {
                 main(rangeR.value, rangeG.value, rangeB.value, elementResult);
-                console.log(this.value);
             }));
+
+            if (randomize === true) [rangeR, rangeG, rangeB].forEach(elem => elem.value = random(0, 255));
+            
+            main(rangeR.value, rangeG.value, rangeB.value, elementResult);
 
         });
     </script>
 </head>
 <body>
-    <h1>Color Brightness Calculator</h1>
-    <form>
-        <label for="color-r">R</label>
-        <input type="range" name="color-r" min="0" max="255" step="1" value="0">        
-        <label for="color-g">G</label>
-        <input type="range" name="color-g" min="0" max="255" step="1" value="0">        
-        <label for="color-b">B</label>
-        <input type="range" name="color-b" min="0" max="255" step="1" value="0">        
-    </form>
-    <div id="result"><p>Not calculated yet. JavaScript must be enabled</p></div>
-
+    <main>
+        <h1>Color Brightness Calculator</h1>
+        <form>
+            <span>
+                <label for="color-r">R</label>
+                <input type="range" name="color-r" min="0" max="255" step="1" value="0">
+            </span>
+            <span>
+                <label for="color-g">G</label>
+                <input type="range" name="color-g" min="0" max="255" step="1" value="0">
+            </span>
+            <span style="display: inline-block;">
+                <label for="color-b">B</label>
+                <input type="range" name="color-b" min="0" max="255" step="1" value="0">
+            </span>
+        </form>
+        <div id="result"><p>Not calculated yet. JavaScript must be enabled</p></div>
+    </main>
 </body>
 </html>
