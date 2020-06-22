@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hearts Background</title>
+    <meta name="description" content="Background full of hearts">
+    <meta name="keywords" content="background, heart, color">
+    <meta name="author" content="Dmitry Yakovlev">
+    <link rel="icon" type="image/png" href="/demo/hearts-background/heart.png" sizes="any">
+    <script>
+        var random = function(min, max) {
+            return Math.floor(min + Math.random() * (max + 1 - min));
+        }
+        function randomColors() {
+            document.documentElement.style.setProperty('--color-bg', `rgb(${random(0, 255)},${random(0, 255)},${random(0, 255)})`);
+            document.documentElement.style.setProperty('--color-1', `rgb(${random(0, 255)},${random(0, 255)},${random(0, 255)})`);
+            document.documentElement.style.setProperty('--color-2', `rgb(${random(0, 255)},${random(0, 255)},${random(0, 255)})`);
+        }
+        randomColors();
+        var intervalID = window.setInterval(randomColors, 1500);
+    </script>
+    <style>
+        :root {
+            --color-bg: rgb(255, 233, 163);
+            --color-1: rgb(232, 58, 37);
+            --color-2: rgb(152, 204, 150);
+        }
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+        }
+        body {
+            background: linear-gradient(135deg, var(--color-1) 1.2em, rgba(232, 58, 37, 0) 1.2em) 0 4em, linear-gradient(-135deg, var(--color-1) 1.2em, rgba(232, 58, 37, 0) 1.2em) 0 4em, radial-gradient(circle at 7.16em 7.4em, var(--color-1) 1.02em, rgba(232, 58, 37, 0) 1.044em) 0 -4em, radial-gradient(circle at 0.84em 7.4em, var(--color-1) 1.02em, rgba(232, 58, 37, 0) 1.044em) 0 -4em, linear-gradient(135deg, var(--color-2) 1.2em, rgba(152, 204, 150, 0) 1.2em) 4em 0, linear-gradient(-135deg, var(--color-2) 1.2em, rgba(152, 204, 150, 0) 1.2em) 4em 0, radial-gradient(circle at 7.16em 7.4em, var(--color-2) 1.02em, rgba(152, 204, 150, 0) 1.044em) 4em 0, radial-gradient(circle at 0.84em 7.4em, var(--color-2) 1.02em, rgba(152, 204, 150, 0) 1.044em) 4em 0;
+            background-size: 8em 8em;
+            background-color: var(--color-bg);
+            background-repeat: repeat;
+            transition: all .5s linear;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        }
+        a {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            padding: 1rem;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+        a:hover {
+            opacity: .8;
+        }
+    </style>
+</head>
+<body>
+    <a href="/" title="Go to Home page"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 13v10h-6v-6h-6v6h-6v-10h-3l12-12 12 12h-3zm-1-5.907v-5.093h-3v2.093l3 3z"/></svg></a>
+</body>
+</html>
