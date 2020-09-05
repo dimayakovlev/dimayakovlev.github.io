@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I'm centered</title>
+    <meta name="description" content="Two examples of centering page content with Flex and Grid">
+    <link rel="icon" type="image/svg+xml" href="/demo/centered/focus.svg" sizes="any">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            color: rgb(255,255,255);
+            font-size: 14px;
+        }
+        section {
+            min-height: 100vh;
+            padding: 1rem;
+        }
+        section > div {
+            padding: 1rem;
+            max-width: 100%;
+            background-color: rgba(255,255,255,.1);
+        }
+        section > div > * {
+            padding: 1rem 0;
+            margin: 0;
+        }
+        h1 {
+            margin: 0;
+            font-size: 3rem;
+            font-weight: 400;
+        }
+        h1 span {
+            font-style: italic;
+        }
+        a {
+            color: currentColor;
+        }
+        a:hover {
+            opacity: .8;
+        }
+        a:focus {
+            outline: solid 1px currentColor;
+        }
+        pre {
+            font-size: 1rem;
+            font-family: monospace;
+            margin: 0;
+            width: auto;
+            overflow-x: auto;
+        }
+        .flex {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(63,223,204);
+        }
+        .grid {
+            display: grid;
+            justify-items: center;
+            align-items: center;
+            background-color: rgb(248,126,123);
+        }
+    </style>
+</head>
+<body>
+
+    <section class="flex">
+        <div>
+            <h1>I'm centered with <span>Flex</span></h1>
+            <pre><code>.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}</code></pre>
+        <p>Read about <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout">CSS Flexible Box Layout</a></p>
+        </div>
+    </section>
+
+    <section class="grid">
+        <div>
+            <h1>I'm centered with <span>Grid</span></h1>
+            <pre><code>.grid {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}</code></pre>
+        <p>Read about <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout">CSS Grid Layout</a></p>
+        </div>
+    </section>
+    
+</body>
+</html>
