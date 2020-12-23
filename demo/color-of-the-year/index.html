@@ -4,23 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="PANTONE Color of the Year since 2000">
+    <meta name="description" content="Every Single PANTONE Color Of The Year From 2000">
     <meta name="keywords" content="pantone,year,color,hex">
     <meta name="author" content="Dmitry Yakovlev">
-    <title>Color of the Year 2020</title>
+    <title>Color of the Year</title>
     <link rel="icon" type="image/svg+xml" href="/demo/color-of-the-year/favicon.svg" sizes="any"/>
     <style>
         * {
             box-sizing: border-box;
-            transition: all .3s 0s;
+            /*transition: all .3s 0s;*/
         }
         :root {
-            --color: #0F4C81;
+            --bg: linear-gradient(90deg, #939597 50%, #F5DF4D 50%);
+            --color: black;
             --color-text: whitesmoke;
         }
         body {
             font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
-            background-color: var(--color);
+            background: var(--bg);
             color: var(--color-text);
             width: 100vw;
             min-height: 100vh;
@@ -38,7 +39,27 @@
             margin: 0;
             font-size: 2rem;
         }
-        p {
+        h2 {
+            text-align: center;
+            padding-top: 10rem;
+            padding-bottom: .5rem;
+            background: var(--bg);
+            font-size: 2rem;
+            font-weight: normal;
+            margin: 0;
+        }
+        h3 {
+            font-size: 1rem;
+            font-weight: bold;
+        }
+        h3 a {
+            color: inherit;
+            text-decoration: none;
+        }
+        h3 a:hover {
+            opacity: .85;
+        }
+        h3, p {
             margin: .5rem 0 0 0;
         }
         form {
@@ -57,63 +78,82 @@
             padding: 1rem;
             background-color: var(--color-text);
             margin: .5rem 0;
+            display: none;
         }
-        .current-color__year {
-            text-align: center;
-            padding-top: 10rem;
-            padding-bottom: .5rem;
-            background-color: var(--color);
-            font-size: 2rem;
+        .info {
+            display: flex;
+            flex-direction: row;
         }
-        .current-color__info {
-            color: var(--color);
+        .info > div {
+            flex-grow: 1;
+            flex-basis: 0;
+            color: var(--color, black);
+        }
+        .info > div:last-child {
             text-align: right;
         }
-        .current-color__name {
-            font-weight: bold;
+        *:focus {
+            outline: solid 1px;
+        }
+        input[name="year"]:focus {
+            outline-color: var(--color-text);
         }
     </style>
 
     <script>
+        // https://en.wikipedia.org/wiki/Pantone#Color_of_the_Year
         window.addEventListener('load', function(){
             const COLORS = {
-                2000: ['Cerulean Blue', '#98B4D4', 'https://www.pantone.com/color-finder/15-4020-TPX'],
-                2001: ['Fuchsia Rose', '#C74375', 'https://www.pantone.com/color-finder/17-2031-TCX'],
-                2002: ['True Red', '#BF1932', 'https://www.pantone.com/color-finder/19-1664-TCX'],
-                2003: ['Aqua Sky', '#7BC4C4', 'https://www.pantone.com/color-finder/14-4811-TCX'],
-                2004: ['Tigerlily', '#E2583E', 'https://www.pantone.com/color-finder/17-1456-TCX'],
-                2005: ['Blue Turquoise', '#53B0AE', 'https://www.pantone.com/color-finder/15-5217-TCX'],
-                2006: ['Sand Dollar', '#DECDBE', 'https://www.pantone.com/color-finder/13-1106-TCX'],
-                2007: ['Chili Pepper', '#9B1B30 ', 'https://www.pantone.com/color-finder/19-1557-TCX'],
-                2008: ['Blue Iris', '#5A5B9F', 'https://www.pantone.com/color-finder/18-3943-TCX'],
-                2009: ['Mimosa', '#F0C05A', 'https://www.pantone.com/color-finder/14-0848-TCX'],
-                2010: ['Turquoise', '#45B5AA', 'https://www.pantone.com/color-finder/15-5519-TCX'],
-                2011: ['Honeysuckle', '#D94F70', 'https://www.pantone.com/color-finder/18-2120-TCX'],
-                2012: ['Tangerine Tango', '#DD4124', 'https://www.pantone.com/color-finder/17-1463-TCX'],
-                2013: ['Emerald', '#009473', 'https://www.pantone.com/color-finder/17-5641-TCX'],
-                2014: ['Radiant Orchid', '#AD5E99', 'https://www.pantone.com/color-finder/18-3224-TCX'],
-                2015: ['Marsala', '#964F4C', 'https://www.pantone.com/color-finder/18-1438-TCX'],
-                2016: ['Serenity', '#91A8D0', 'https://www.pantone.com/color-finder/15-3919-TCX'],
-                2017: ['Rose Quartz', '#F7CAC9', 'https://www.pantone.com/color-finder/13-1520-TCX'],
-                2018: ['Greenery', '#88B04B', 'https://www.pantone.com/color-finder/15-0343-TCX'],
-                2019: ['Ultra Violet', '#5F4B8B', 'https://www.pantone.com/color-finder/18-3838-TCX'],
-                2020: ['Classic Blue', '#0F4C81', 'https://www.pantone.com/color-finder/19-4052-TCX']
+                2000: [['Cerulean', '#98B4D4', 'https://www.pantone.com/color-finder/15-4020-TPX']],
+                2001: [['Fuchsia Rose', '#C74375', 'https://www.pantone.com/color-finder/17-2031-TCX']],
+                2002: [['True Red', '#BF1932', 'https://www.pantone.com/color-finder/19-1664-TCX']],
+                2003: [['Aqua Sky', '#7BC4C4', 'https://www.pantone.com/color-finder/14-4811-TCX']],
+                2004: [['Tigerlily', '#E2583E', 'https://www.pantone.com/color-finder/17-1456-TCX']],
+                2005: [['Blue Turquoise', '#53B0AE', 'https://www.pantone.com/color-finder/15-5217-TCX']],
+                2006: [['Sand Dollar', '#DECDBE', 'https://www.pantone.com/color-finder/13-1106-TCX']],
+                2007: [['Chili Pepper', '#9B1B30 ', 'https://www.pantone.com/color-finder/19-1557-TCX']],
+                2008: [['Blue Iris', '#5A5B9F', 'https://www.pantone.com/color-finder/18-3943-TCX']],
+                2009: [['Mimosa', '#F0C05A', 'https://www.pantone.com/color-finder/14-0848-TCX']],
+                2010: [['Turquoise', '#45B5AA', 'https://www.pantone.com/color-finder/15-5519-TCX']],
+                2011: [['Honeysuckle', '#D94F70', 'https://www.pantone.com/color-finder/18-2120-TCX']],
+                2012: [['Tangerine Tango', '#DD4124', 'https://www.pantone.com/color-finder/17-1463-TCX']],
+                2013: [['Emerald', '#009473', 'https://www.pantone.com/color-finder/17-5641-TCX']],
+                2014: [['Radiant Orchid', '#AD5E99', 'https://www.pantone.com/color-finder/18-3224-TCX']],
+                2015: [['Marsala', '#964F4C', 'https://www.pantone.com/color-finder/18-1438-TCX']],
+                2016: [
+                    ['Rose Quartz', '#F7CAC9', 'https://www.pantone.com/color-finder/13-1520-TCX'],
+                    ['Serenity', '#93A9D1', 'https://www.pantone.com/color-finder/15-3919-TCX']
+                ],
+                2017: [['Greenery', '#88B04B', 'https://www.pantone.com/color-finder/15-0343-TCX']],
+                2018: [['Ultra Violet', '#5F4B8B', 'https://www.pantone.com/color-finder/18-3838-TCX']],
+                2019: [['Living Coral', '#FA7268', 'https://www.pantone.com/color-finder/16-1546-TPX']],
+                2020: [['Classic Blue', '#0F4C81', 'https://www.pantone.com/color-finder/19-4052-TCX']],
+                2021: [
+                    ['Ultimate Gray', '#939597', 'https://www.pantone.com/color-finder/17-5104-TCX'],
+                    ['Illuminating', '#F5DF4D', 'https://www.pantone.com/color-finder/13-0647-TCX']
+                ],
             };
             var range = document.querySelector('input[name="year"]'),
-                currentYearContainer = document.querySelector('.current-color__year'),
-                currentColorNameContainer = document.querySelector('.current-color__name'),
-                currentColorHEXContainer = document.querySelector('.current-color__hex'),
+                currentYearContainer = document.querySelector('h2'),
+                currentColorInfo = document.querySelector('.info'),
                 parameterYear = (new URL(window.location.href)).searchParams.get('year');
 
             function changeYear(year) {
                 document.title = `Color of the Year ${year}`;
-                document.documentElement.style.setProperty('--color', COLORS[year][1]);
+                range.title = year;
                 currentYearContainer.innerHTML = year;
-                currentColorNameContainer.innerHTML = COLORS[year][0];
-                currentColorHEXContainer.innerHTML = COLORS[year][1];
+                if (COLORS[year].length == 1) {
+                    document.documentElement.style.setProperty('--bg', `linear-gradient(90deg, ${COLORS[year][0][1]} 50%, ${COLORS[year][0][1]} 50%)`);
+                    currentColorInfo.innerHTML = `<div style="--color: ${COLORS[year][0][1]};"><h3><a href="${COLORS[year][0][2]}" target="_blank" title="${COLORS[year][0][0]}">${COLORS[year][0][0]}</a></h3><p class="hex">${COLORS[year][0][1]}</p></div>`
+                } else {
+                    document.documentElement.style.setProperty('--bg', `linear-gradient(90deg, ${COLORS[year][0][1]} 50%, ${COLORS[year][1][1]} 50%)`);
+                    currentColorInfo.innerHTML = `<div style="--color: ${COLORS[year][0][1]};"><h3><a href="${COLORS[year][0][2]}" target="_blank" title="${COLORS[year][0][0]}">${COLORS[year][0][0]}</a></h3><p class="hex">${COLORS[year][0][1]}</p></div><div style="--color: ${COLORS[year][1][1]};"><h3><a href="${COLORS[year][1][2]}" target="_blank" title="${COLORS[year][1][0]}">${COLORS[year][1][0]}</a></h3><p class="hex">${COLORS[year][1][1]}</p></div>`
+                }
             }
 
+            document.querySelector('.current-color').style.display = 'block';
             document.querySelector('form').style.visibility = 'visible';
+            range.focus();
 
             if (parameterYear && COLORS[parameterYear]) range.value = parameterYear;
             
@@ -129,15 +169,12 @@
     <main>
         <h1>Color of the Year</h1>
         <div class="current-color">
-            <div class="current-color__year">2020</div>
-            <div class="current-color__info">
-                <p class="current-color__name">Classic Blue</p>
-                <p class="current-color__hex">#0F4C81</p>
-            </div>
+            <h2>2021</h2>
+            <div class="info"></div>
         </div>
         <form>
-            <input type="range" name="year" min="2000" max="2020" step="1" value="2020">
-            <label for="year"><span>2000</span> <span>2020</span></label>
+            <input type="range" name="year" min="2000" max="2021" step="1" value="2021">
+            <label for="year"><span>2000</span> <span>2021</span></label>
         </form>
     </main>
 </body>
