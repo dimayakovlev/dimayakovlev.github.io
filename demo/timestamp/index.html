@@ -5,19 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Get Current Unix Timestamp</title>
+    <meta name="keywords" content="time, timestamp, unix">
+    <meta name="description" content="Get Current Unix Timestamp In Real Time">
     <style>
-        body {
+        html {
+            min-height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
         }
-        p[data-content='timestamp'] {
+        [data-content='timestamp'] {
             font-weight: 600;
             font-size: 150%;
         }
     </style>
 </head>
-<body onload="document.querySelector('[data-content=timestamp]').innerHTML = Date.now() / 1000 | 0;">
+<body onload="var el = document.querySelector('[data-content=timestamp]'), timestamp = function() { return Date.now() / 1000 | 0; }; el.innerHTML = timestamp(); setInterval(function() {el.innerHTML = timestamp();}, 1000);">
     <h1>Current Unix Timestamp</h1>
-    <p data-content="timestamp">0</p>
+    <p><time data-content="timestamp">0</time></p>
     <p>Seconds from the Unix epoch 00:00:00 UTC on 1 January 1970</p>
 </body>
 </html>
