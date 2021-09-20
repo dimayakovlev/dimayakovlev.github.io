@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Image Slideshow</title>
+    <meta name="description" content="Example of css only image slideshow using background images">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-flow: column nowrap;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            font-size: 16px;
+            line-height: 1.25;
+            font-family: sans-serif;
+            background-image: url("tomas-williams-p-_RJY6hN3E-unsplash.jpg"), url("willian-justen-de-vasconcellos-g5FyZvIzUS4-unsplash.jpg");
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            animation: slide 7s infinite;
+            animation-delay: 500ms;
+            animation-timing-function: ease-in-out;
+            color: white;
+            background-color: black;
+        }
+        @keyframes slide {
+            0% {
+                background-image: url("tomas-williams-p-_RJY6hN3E-unsplash.jpg");
+            }
+            50% {
+                background-image: url("willian-justen-de-vasconcellos-g5FyZvIzUS4-unsplash.jpg");
+            }
+        }
+        body > * {
+            padding: 1rem 0;
+        }
+        h1 {
+            font-size: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>Slideshow</h1>
+    <p>Powered with CSS Only</p>
+</body>
+</html>
