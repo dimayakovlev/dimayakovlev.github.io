@@ -7,7 +7,7 @@
     <meta name="description" content="Calculate brightness of RGB color">
     <meta name="keywords" content="color, brightness, value, rgb">
     <meta name="author" content="Dmitry Yakovlev">
-    <link rel="icon" type="image/svg+xml" href="/demo/color-brightness-calculator/color-palette.svg" sizes="any"/>
+    <link rel="icon" type="image/svg+xml" href="/demo/color-brightness-calculator/color-palette.svg" sizes="any">
     <style>
         * {
             box-sizing: border-box;
@@ -71,7 +71,7 @@
             var random = function(min, max) {
                 return Math.floor(min + Math.random() * (max + 1 - min));
             };
-
+// https://www.w3.org/TR/AERT/#color-contrast
             function main(r, g, b, e) {
                 let colorRGB = `rgb(${r},${g},${b})`,
                     brightness = ((r*299)+(g*587)+(b*114))/1000,
