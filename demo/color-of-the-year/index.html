@@ -8,14 +8,15 @@
     <meta name="keywords" content="pantone,year,color,hex">
     <meta name="author" content="Dmitry Yakovlev">
     <title>Color of the Year</title>
-    <link rel="icon" type="image/svg+xml" href="/demo/color-of-the-year/favicon.svg" sizes="any"/>
+    <link rel="icon" type="image/svg+xml" href="/demo/color-of-the-year/favicon.svg" sizes="any">
     <style>
         * {
             box-sizing: border-box;
             /*transition: all .3s 0s;*/
         }
         :root {
-            --bg: linear-gradient(90deg, #939597 50%, #F5DF4D 50%);
+            /*--bg: linear-gradient(90deg, #939597 50%, #F5DF4D 50%);*/
+            --bg: #6667AB;
             --color: black;
             --color-text: whitesmoke;
         }
@@ -132,6 +133,7 @@
                     ['Ultimate Gray', '#939597', 'https://www.pantone.com/color-finder/17-5104-TCX'],
                     ['Illuminating', '#F5DF4D', 'https://www.pantone.com/color-finder/13-0647-TCX']
                 ],
+                2022: [['Very Peri', '#6667AB', 'https://www.pantone.com/connect/17-3938-TCX']],
             };
             var range = document.querySelector('input[name="year"]'),
                 currentYearContainer = document.querySelector('h2'),
@@ -143,7 +145,7 @@
                 range.title = year;
                 currentYearContainer.innerHTML = year;
                 if (COLORS[year].length == 1) {
-                    document.documentElement.style.setProperty('--bg', `linear-gradient(90deg, ${COLORS[year][0][1]} 50%, ${COLORS[year][0][1]} 50%)`);
+                    document.documentElement.style.setProperty('--bg', COLORS[year][0][1]);
                     currentColorInfo.innerHTML = `<div style="--color: ${COLORS[year][0][1]};"><h3><a href="${COLORS[year][0][2]}" target="_blank" title="${COLORS[year][0][0]}">${COLORS[year][0][0]}</a></h3><p class="hex">${COLORS[year][0][1]}</p></div>`
                 } else {
                     document.documentElement.style.setProperty('--bg', `linear-gradient(90deg, ${COLORS[year][0][1]} 50%, ${COLORS[year][1][1]} 50%)`);
@@ -169,12 +171,12 @@
     <main>
         <h1>Color of the Year</h1>
         <div class="current-color">
-            <h2>2021</h2>
+            <h2>2022</h2>
             <div class="info"></div>
         </div>
         <form>
-            <input type="range" name="year" min="2000" max="2021" step="1" value="2021">
-            <label for="year"><span>2000</span> <span>2021</span></label>
+            <input type="range" name="year" min="2000" max="2022" step="1" value="2022">
+            <label for="year"><span>2000</span> <span>2022</span></label>
         </form>
     </main>
 </body>
